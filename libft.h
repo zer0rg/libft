@@ -6,7 +6,7 @@
 /*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 18:49:34 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/03 12:38:33 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/03 14:11:07 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ void	*ft_memchr(const void *buf, int c, size_t count);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_strncmp(const char *str1, const char *str2, size_t count);
 int		ft_atoi(const char *string);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif
