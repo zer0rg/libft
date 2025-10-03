@@ -3,28 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgerman- <rgerman-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 19:25:49 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/09/30 16:25:02 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/03 11:44:15 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_memcpy(void *dest, const void *src, unsigned int count)
+void	*ft_memcpy(void *dest, const void *src, unsigned int count)
 {
-	unsigned char *destCopy;
-	unsigned char *srcCopy;
+	unsigned char	*dest_copy;
+	unsigned char	*src_copy;
 
 	if (!dest && !src)
-        return (dest);
-
-	srcCopy = (unsigned char *)src;
-	destCopy = (unsigned char *)dest;
-
+		return (dest);
+	src_copy = (unsigned char *)src;
+	dest_copy = (unsigned char *)dest;
 	while (count--)
 	{
-		*(destCopy++) = *(srcCopy++);
+		*(dest_copy++) = *(src_copy++);
 	}
-
 	return (dest);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rgerman- <rgerman-@student.42.fr>          +#+  +:+       +#+         #
+#    By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/01 14:01:19 by rgerman-          #+#    #+#              #
-#    Updated: 2025/10/01 14:57:18 by rgerman-         ###   ########.fr        #
+#    Updated: 2025/10/03 11:19:06 by rgerman-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ test: all
 	./$(TESTER)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) tester libft.a
 
 fclean: clean
 	rm -f $(NAME)

@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgerman- <rgerman-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 19:22:34 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/09/30 16:44:07 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/03 11:44:53 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_bzero(void *add, unsigned int n)
+void	ft_bzero(void *add, unsigned int n)
 {
-    char *p = (char*)add;
-    while(n-- > 0)
-    {
-        *p++ = 0;
-        add++;
-    }
+	char	*p;
+
+	p = (char *)add;
+	while (n-- > 0)
+	{
+		*p++ = 0;
+		add++;
+	}
 }

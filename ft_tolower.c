@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgerman- <rgerman-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 16:05:52 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/01 16:11:15 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/01 20:00:54 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if ((unsigned char)c >= 'A' && (unsigned char)c <= 'Z')
 		return (c + 32);

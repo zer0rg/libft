@@ -3,21 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgerman- <rgerman-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 18:57:16 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/08/20 19:56:47 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/03 11:51:06 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void ft_memset(void *add, int c, unsigned int n)
+void	ft_memset(void *add, int c, unsigned int n)
 {
-    unsigned char *p = (unsigned char *)add;
-    while(n--)
-    {
-        *p = (unsigned char)c;
-        p++;
-    }
+	unsigned char	*p;
+
+	p = (unsigned char *)add;
+	while (n--)
+	{
+		*p = (unsigned char)c;
+		p++;
+	}
 }
