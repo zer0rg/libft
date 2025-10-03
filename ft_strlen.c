@@ -6,11 +6,13 @@
 /*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 18:55:56 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/03 11:43:40 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/03 17:29:46 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "stdio.h"
+
+size_t	ft_strlen(char *str)
 {
 	int		i;
 

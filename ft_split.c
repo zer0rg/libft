@@ -1,35 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/03 14:10:37 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/03 16:59:30 by rgerman-         ###   ########.fr       */
+/*   Created: 2025/10/03 18:17:36 by rgerman-          #+#    #+#             */
+/*   Updated: 2025/10/03 20:02:36 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	count_substring(char const *s, char c)
 {
-	char	*substr;
-	size_t	src_len;
+	size_t	strings_count;
 	size_t	i;
 
-	src_len = (size_t)ft_strlen((char *)s);
-	substr = malloc(sizeof(char) * len + 1);
-	if (!substr)
-		return (NULL);
+	strings_count = 0;
 	i = 0;
-	while (i < len && s[start] && start < src_len)
+	while (s[i] != NULL)
 	{
-		substr[i] = s[start];
+		if (s[i] == c && s[i + 1] != NULL)
+			strings_count++;
 		i++;
-		start++;
 	}
-	if (substr[i] != '\0')
-		substr[i] = '\0';
-	return (substr);
+	return (strings_count);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	size_t	i;
+	int		k;
+	int		string_count;
+	char	**split;
+
+	string_count = count_substring(s, c);
+	split = malloc(sizeof(char *) * string_count);
+	i = 0;
+	while(i < string_count)
+	{
+		k = 0;
+		while(split[i][k] != '\0')
+	}
+	
 }
