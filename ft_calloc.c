@@ -6,7 +6,7 @@
 /*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:01:19 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/03 11:45:04 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/03 14:05:10 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t			max_sizet;
 	size_t			i;
 
-	max_sizet = (size_t)~0;
+	max_sizet = ~0;
 	if (nmemb != 0 && size > max_sizet / nmemb)
 		return (NULL);
 	total_bytes = nmemb * size;
