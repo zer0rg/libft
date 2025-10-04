@@ -3,79 +3,120 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgerman- <rgerman-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 18:17:36 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/03 22:18:50 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/04 22:00:36 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int	count_substring(char const *s, char c)
-{
-	size_t	strings_count;
-	size_t	i;
+int		count_chars_insubstr(char const *s, char **str, char c);
 
-	strings_count = 0;
-	i = 0;
-	if(s[i] != c)
-		strings_count++;
-	while (s[i] != '\0')
+size_t	count_substrs(char *s, char c)
+{
+	int		in_delimiter;
+	size_t	substrs_count;
+
+	in_delimiter = 1;
+	substrs_count = 0;
+	while (*s)
 	{
-		if (s[i] == c && s[i + 1] != '\0' && s[i + 1] != c )
-			strings_count++;
-		i++;
+		if (*s == c)
+		{
+			if (!in_delimiter)
+			{
+				substrs_count++;
+				in_delimiter = 1;
+			}
+		}
+		if (*s != c)
+		{
+			in_delimiter = 0;
+		}
+		s++;
 	}
-	return (strings_count);
+	if (!in_delimiter)
+		substrs_count++;
+	return (substrs_count);
 }
 
-int count_chars_insubstr(char const *s, char c)
+int	alloc_substrs(char **strarr, char const *s, char c)
+{
+	size_t	i;
+	size_t	k;
+
+	i = 0;
+	while (*s)
+	{
+		k = 0;
+		while (*s == c)
+			s++;
+		if (*s != c)
+		{
+			if (!count_chars_insubstr(s, &strarr[i], c))
+				return (0);
+			while (*s != c && *s)
+			{
+				strarr[i][k] = *s++;
+				k++;
+			}
+			strarr[i][k] = 0;
+			i++;
+		}
+	}
+	return (1);
+}
+
+int	count_chars_insubstr(char const *s, char **str, char c)
 {
 	size_t	i;
 	size_t	count;
 
 	i = 0;
 	count = 0;
-	while(s[i] != '\0' && s[i] != c)
+	while (s[i] != '\0' && s[i] != c)
 	{
 		i++;
 		count++;
 	}
+	*str = malloc(sizeof(char) * (count + 1));
+	if (!*str)
+		return (0);
 	return (count);
+}
 
+void	free_split(char **split, size_t count)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < count)
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		k;
-	int		j;
-	int		string_count;
 	char	**split;
+	size_t	substrs_count;
 
-	string_count = count_substring(s, c);
-	split = malloc(sizeof(char *) * string_count + 1);
-	if(!split)
-		return NULL;
-	i = 0;
-	j = 0;
-	while(i < string_count)
+	if (NULL == s)
+		return (NULL);
+	substrs_count = count_substrs((char *)s, c);
+	split = malloc(sizeof(char *) * (substrs_count + 1));
+	if (!split)
+		return (NULL);
+	split[substrs_count] = NULL;
+	if (!alloc_substrs(split, s, c))
 	{
-		if(s[j] == c)
-			j++;
-		split[i] = malloc(sizeof(char) * count_chars_insubstr(&s[j], c) + 1);
-		printf("COUNT CHARS: %d  ITERATOR: %d\n", count_chars_insubstr(&s[j], c), j);
-		k = 0;
-		while(s[j] != c && s[j + 1] != '\0')
-		{
-			split[i][k] = s[j];
-			k++;
-			j++;
-		}
-		split[i][k] = '\0';
-		i++;
+		free_split(split, substrs_count);
+		return (NULL);
 	}
 	return (split);
 }
