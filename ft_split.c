@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: rgerman- <rgerman-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 18:17:36 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/04 22:00:36 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/05 16:13:11 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	alloc_substrs(char **strarr, char const *s, char c)
 		if (*s != c)
 		{
 			if (!count_chars_insubstr(s, &strarr[i], c))
-				return (0);
+				return (i);
 			while (*s != c && *s)
 			{
 				strarr[i][k] = *s++;
@@ -105,17 +105,19 @@ char	**ft_split(char const *s, char c)
 {
 	char	**split;
 	size_t	substrs_count;
+	int		succesful_allocs;
 
 	if (NULL == s)
 		return (NULL);
 	substrs_count = count_substrs((char *)s, c);
-	split = malloc(sizeof(char *) * (substrs_count + 1));
+	split = ft_calloc(substrs_count + 1, sizeof(char *));
 	if (!split)
 		return (NULL);
 	split[substrs_count] = NULL;
-	if (!alloc_substrs(split, s, c))
+	succesful_allocs = alloc_substrs(split, s, c);
+	if (!succesful_allocs)
 	{
-		free_split(split, substrs_count);
+		free_split(split, succesful_allocs);
 		return (NULL);
 	}
 	return (split);
