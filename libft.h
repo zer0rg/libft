@@ -6,7 +6,7 @@
 /*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 18:49:34 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/05 16:33:33 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/05 19:21:31 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
 
 #endif

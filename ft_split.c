@@ -6,7 +6,7 @@
 /*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 18:17:36 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/05 17:42:05 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/05 20:19:57 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	alloc_substrs(char **strarr, char const *s, char c)
 	while (*s)
 	{
 		k = 0;
-		while (*s == c)
+		while (*s == c && *s)
 			s++;
 		substr_len = count_chars_insubstr(s, &strarr[i], c);
 		if (!substr_len)
@@ -77,6 +77,11 @@ int	count_chars_insubstr(char const *s, char **str, char c)
 	{
 		i++;
 		count++;
+	}
+	if (count == 0)
+	{
+		*str = NULL;
+		return (0);
 	}
 	*str = malloc(sizeof(char) * (count + 1));
 	if (!*str)
@@ -115,5 +120,6 @@ char	**ft_split(char const *s, char c)
 		free_split(split, succesful_allocs);
 		return (split);
 	}
+	split[substrs_count + 1] = NULL;
 	return (split);
 }

@@ -3,7 +3,10 @@
         "stdio.h": "c",
         "string.h": "c",
         "stdlib.h": "c",
-        "libft.h": "c"
+        "libft.h": "c",
+        "ranges": "c",
+        "bitset": "cpp",
+        "string_view": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
