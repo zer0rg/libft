@@ -6,7 +6,7 @@
 /*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 16:17:24 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/01 20:13:38 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/05 21:14:19 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strrchr(const char *str, int c)
 {
 	size_t	str_len;
 
-	str_len = ft_strlen((char *)str);
+	str_len = ft_strlen(str);
 	if (c == '\0')
 		return ((char *)&str[str_len]);
 	while (str_len > 0)

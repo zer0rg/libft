@@ -6,7 +6,7 @@
 /*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 17:39:27 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/03 18:20:49 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/05 21:13:57 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*join;
 	size_t	i;
 
-	total_length = ft_strlen((char *)s1) + ft_strlen((char *)s2);
+	total_length = ft_strlen(s1) + ft_strlen(s2);
 	join = malloc(sizeof(char) * (total_length + 1));
 	if (!join)
 		return (NULL);

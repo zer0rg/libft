@@ -6,13 +6,13 @@
 /*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 18:55:56 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/04 20:22:26 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/05 21:13:13 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stdio.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	int		i;
 

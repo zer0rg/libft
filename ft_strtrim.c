@@ -6,7 +6,7 @@
 /*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 17:50:26 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/03 18:24:08 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/05 21:14:23 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (NULL);
-	s1_len = ft_strlen((char *)s1);
+	s1_len = ft_strlen(s1);
 	start = 0;
 	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
