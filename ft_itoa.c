@@ -6,13 +6,13 @@
 /*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 18:59:35 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/05 20:23:47 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/06 20:36:38 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	digit_counter(int n)
+static int	digit_counter(int n)
 {
 	int	count;
 

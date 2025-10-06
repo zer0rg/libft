@@ -6,7 +6,7 @@
 /*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 18:17:36 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/05 20:19:57 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/06 20:37:19 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int		count_chars_insubstr(char const *s, char **str, char c);
+static int		count_chars_insubstr(char const *s, char **str, char c);
 
-size_t	count_substrs(char *s, char c)
+static size_t	count_substrs(char *s, char c)
 {
 	int		in_substr;
 	size_t	substrs_count;
@@ -40,7 +40,7 @@ size_t	count_substrs(char *s, char c)
 	return (substrs_count);
 }
 
-int	alloc_substrs(char **strarr, char const *s, char c)
+static int	alloc_substrs(char **strarr, char const *s, char c)
 {
 	size_t	i;
 	size_t	k;
@@ -66,7 +66,7 @@ int	alloc_substrs(char **strarr, char const *s, char c)
 	return (1);
 }
 
-int	count_chars_insubstr(char const *s, char **str, char c)
+static int	count_chars_insubstr(char const *s, char **str, char c)
 {
 	size_t	i;
 	size_t	count;
@@ -89,7 +89,7 @@ int	count_chars_insubstr(char const *s, char **str, char c)
 	return (count);
 }
 
-void	free_split(char **split, size_t count)
+static void	free_split(char **split, size_t count)
 {
 	size_t	i;
 
