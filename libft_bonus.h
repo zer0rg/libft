@@ -6,12 +6,12 @@
 /*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 16:21:34 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/06 16:41:25 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/06 20:32:11 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BONUS_H
-# define BONUS_H
+#ifndef LIBFT_BONUS_H
+# define LIBFT_BONUS_H
 
 # include "libft.h"
 # include <stdlib.h>
