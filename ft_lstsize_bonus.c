@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/05 21:47:02 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/06 12:08:22 by rgerman-         ###   ########.fr       */
+/*   Created: 2025/10/06 12:57:20 by rgerman-          #+#    #+#             */
+/*   Updated: 2025/10/06 13:00:51 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
-#include <unistd.h>
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_lstsize(t_list *lst)
 {
-	char	digit;
+	int	count;
 
-	if (n == INT_MIN)
+	count = 0;
+	while (lst != NULL)
 	{
-		write(fd, "-2147483648", 11);
-		return ;
+		lst = lst->next;
+		count++;
 	}
-	if (n < 0)
-	{
-		write(fd, "-", 1);
-		n = n * (-1);
-	}
-	if (n >= 10)
-	{
-		ft_putnbr_fd(n / 10, fd);
-	}
-	digit = (long long int)n % 10 + '0';
-	write(fd, &digit, 1);
-	return ;
+	return (count);
 }

@@ -1,38 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/05 21:47:02 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/06 12:08:22 by rgerman-         ###   ########.fr       */
+/*   Created: 2025/10/06 13:25:10 by rgerman-          #+#    #+#             */
+/*   Updated: 2025/10/06 13:29:20 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
-#include <unistd.h>
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	char	digit;
-
-	if (n == INT_MIN)
-	{
-		write(fd, "-2147483648", 11);
+	if (!lst || !del)
 		return ;
-	}
-	if (n < 0)
-	{
-		write(fd, "-", 1);
-		n = n * (-1);
-	}
-	if (n >= 10)
-	{
-		ft_putnbr_fd(n / 10, fd);
-	}
-	digit = (long long int)n % 10 + '0';
-	write(fd, &digit, 1);
-	return ;
+	del(lst->content);
+	free(lst);
 }
