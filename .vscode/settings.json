@@ -6,7 +6,8 @@
         "libft.h": "c",
         "ranges": "c",
         "bitset": "cpp",
-        "string_view": "cpp"
+        "string_view": "cpp",
+        "libft_bonus.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

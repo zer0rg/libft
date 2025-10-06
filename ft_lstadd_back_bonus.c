@@ -6,11 +6,11 @@
 /*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 13:05:06 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/06 13:23:51 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/06 16:47:04 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
@@ -24,7 +24,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		return ;
 	}
 	last = *lst;
-	while (last != NULL)
-		last = lst->next;
-	last = new;
+	while (last-> next != NULL)
+		last = (*lst)->next;
+	last->next = new;
 }

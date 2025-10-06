@@ -6,11 +6,11 @@
 /*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 13:29:33 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/06 13:43:55 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/06 16:52:39 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {

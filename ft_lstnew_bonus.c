@@ -6,18 +6,18 @@
 /*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 12:35:56 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/06 13:00:17 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/06 16:39:54 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
 
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*linked_list;
 
 	linked_list = malloc(sizeof(t_list));
-	(!linked_list)
+	if (!linked_list)
 		return (NULL);
 	linked_list->content = content;
 	linked_list->next = NULL;
