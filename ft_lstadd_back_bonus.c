@@ -6,25 +6,26 @@
 /*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 13:05:06 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/06 16:47:04 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/07 19:35:17 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*last;
+	t_list	*copy;
 
-	if (!lst || !new)
-		return ;
-	if (*lst == NULL)
+	if (lst != NULL || new != NULL)
 	{
-		*lst = new;
-		return ;
+		if (*lst == NULL)
+		{
+			*lst = new;
+			return ;
+		}
+		copy = *lst;
+		while (copy->next != NULL)
+			copy = copy->next;
+		copy->next = new;
 	}
-	last = *lst;
-	while (last-> next != NULL)
-		last = (*lst)->next;
-	last->next = new;
 }

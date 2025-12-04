@@ -6,7 +6,7 @@
 /*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 18:17:36 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/06 20:37:19 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/07 20:07:38 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,15 +111,18 @@ char	**ft_split(char const *s, char c)
 	if (NULL == s)
 		return (NULL);
 	substrs_count = count_substrs((char *)s, c);
-	split = ft_calloc(substrs_count + 1, sizeof(char *));
+	split = malloc((substrs_count + 1) * sizeof(char *));
 	if (!split)
 		return (NULL);
-	succesful_allocs = alloc_substrs(split, s, c);
-	if (!succesful_allocs)
+	split[substrs_count] = NULL;
+	if (substrs_count > 0)
 	{
-		free_split(split, succesful_allocs);
-		return (split);
+		succesful_allocs = alloc_substrs(split, s, c);
+		if (!succesful_allocs)
+		{
+			free_split(split, succesful_allocs);
+			return (split);
+		}
 	}
-	split[substrs_count + 1] = NULL;
 	return (split);
 }

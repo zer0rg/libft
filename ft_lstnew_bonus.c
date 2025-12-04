@@ -6,11 +6,11 @@
 /*   By: rgerman- <rgerman-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 12:35:56 by rgerman-          #+#    #+#             */
-/*   Updated: 2025/10/06 20:15:18 by rgerman-         ###   ########.fr       */
+/*   Updated: 2025/10/07 18:54:44 by rgerman-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 t_list	*ft_lstnew(void *content)
 {
